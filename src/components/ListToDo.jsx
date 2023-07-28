@@ -15,12 +15,12 @@ function ListToDo() {
       const updatedTasks = [task, ...tasks];
       setTasks(updatedTasks);
     }
-  }
+  };
 
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter(task => task.id !== id);
     setTasks(updatedTasks);
-  }
+  };
 
   const completeTask = (id) => {
     const updatedTasks = tasks.map(task => {
@@ -30,7 +30,7 @@ function ListToDo() {
       return task;
     });
     setTasks(updatedTasks);
-  }
+  };
 
   return (
     <>
@@ -38,6 +38,7 @@ function ListToDo() {
       <div className='list-todo-container'>
         {
           tasks.map((task) => 
+
             <ToDo
               key={task.id}
               id={task.id}

@@ -13,12 +13,6 @@
   cursor: pointer;
 }
 
-/* Tarea completada */
-.todo-container.completed {
-  background-color: #5a01a7;
-  text-decoration: line-through
-}
-
 /* Colores de fondo para las tareas, con subclases (enésimo hijo, en este caso cada tres elementos se repite la secuencia de colores) */
 .todo-container:nth-child(3n + 1) {
   background-color: #1b1b32;
@@ -30,6 +24,11 @@
   background-color: #3b3b4f;
 }
 
+/* Tarea completada */
+.todo-container.completed {
+  background-color: #5a01a7;
+  text-decoration: line-through
+}
 
 /* Texto */
 .todo-text {

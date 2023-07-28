@@ -23,7 +23,7 @@ function FormToDo(props) {
 
     //Se lo pasaremos al componente padre ListToDo cuando se envía, tenemos que pasar onSumbit(nombre estándar) como prop desde ListToDo.
     props.onSubmit(newTask);
-  }
+  };
 
   return (
     <form 

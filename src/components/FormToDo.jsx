@@ -1,13 +1,40 @@
-import '../styles/Form.css'
+import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import '../styles/Form.css';
 
 function FormToDo(props) {
+
+  const [input, setInput] = useState('');
+
+  const handleChange = (content) => {
+    setInput(content.target.value);
+  }
+
+  const handleSend = (content) => {
+    //Para que no se vuelva a cargar la página al enviar el formulario
+    content.preventDefault(); 
+
+    //Creamos un nuevo objeto 
+    const newTask = {
+      id: uuidv4(),
+      text: input,
+      completed: false
+    }
+
+    //Se lo pasaremos al componente padre ListToDo cuando se envía, tenemos que pasar onSumbit(nombre estándar) como prop desde ListToDo.
+    props.onSubmit(newTask);
+  }
+
   return (
-    <form className='form-todo'>
+    <form 
+      className='form-todo'
+      onSubmit={handleSend}>
       <input
         className='input-todo'
         type='text'
         placeholder="Escriba una tarea"
         name="text"
+        onChange={handleChange}
       />
       <button className='button-todo'>
         Añadir tarea

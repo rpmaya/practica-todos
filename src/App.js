@@ -1,5 +1,5 @@
 import Logo from './components/Logo';
-import FormToDo from './components/FormToDo';
+import ListToDo from './components/ListToDo';
 
 import './App.css';
 
@@ -9,7 +9,7 @@ function App() {
       <Logo />
       <div className="todo-list">
         <h1>Mis Tareas</h1>
-        <FormToDo />
+        <ListToDo />
       </div>
     </div>
   );

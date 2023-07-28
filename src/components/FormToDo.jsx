@@ -6,13 +6,13 @@ function FormToDo(props) {
 
   const [input, setInput] = useState('');
 
-  const handleChange = (content) => {
-    setInput(content.target.value);
+  const handleChange = (event) => {
+    setInput(event.target.value);
   }
 
-  const handleSend = (content) => {
+  const handleSend = (event) => {
     //Para que no se vuelva a cargar la página al enviar el formulario
-    content.preventDefault(); 
+    event.preventDefault(); 
 
     //Creamos un nuevo objeto 
     const newTask = {

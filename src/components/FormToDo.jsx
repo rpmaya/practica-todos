@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import '../styles/Form.css';
+
 
 function FormToDo(props) {
 
@@ -12,7 +12,7 @@ function FormToDo(props) {
 
   const handleSend = (event) => {
     //Para que no se vuelva a cargar la página al enviar el formulario
-    event.preventDefault(); 
+    event.preventDefault();
 
     //Creamos un nuevo objeto 
     const newTask = {
@@ -26,19 +26,20 @@ function FormToDo(props) {
   };
 
   return (
-    <form 
-      className='form-todo'
+    <form className="row g-2"
       onSubmit={handleSend}>
-      <input
-        className='input-todo'
-        type='text'
-        placeholder="Escriba una tarea"
-        name="text"
-        onChange={handleChange}
-      />
-      <button className='button-todo'>
-        Añadir tarea
-      </button>
+      <div className="input-group mb-3">
+        <input
+          className='form-control'
+          type="text"
+          placeholder="Escriba una tarea"
+          name="text"
+          onChange={handleChange}
+        />
+        <button className="btn btn-success">
+          Añadir tarea
+        </button>
+      </div>
     </form>
   );
 }

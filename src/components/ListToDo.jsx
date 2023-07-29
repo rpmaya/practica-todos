@@ -35,10 +35,9 @@ function ListToDo() {
   return (
     <>
       <FormToDo onSubmit={addTask} />
-      <div className='list-todo-container'>
+      <ul className='list-group'>
         {
           tasks.map((task) => 
-
             <ToDo
               key={task.id}
               id={task.id}
@@ -49,7 +48,7 @@ function ListToDo() {
             />
           )
         }
-      </div>
+      </ul>
     </>
   );
 }

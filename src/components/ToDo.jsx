@@ -1,21 +1,26 @@
-import '../styles/Todo.css';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-function ToDo({ id, text, completed, completeToDo, deleteToDo }) { 
+function ToDo({ id, text, completed, completeToDo, deleteToDo }) {
+
+  const getColor = (id) => {
+    const colors = ["secondary", "ligth", "dark"];
+    return colors[id.charCodeAt() % 3];
+  }
 
   return (
-    <div className={completed ? "todo-container completed" : "todo-container"}>
-      <div 
-        className="todo-text"
+    <li className={completed ? "list-group-item list-group-item-success d-flex justify-content-between" :
+                               `list-group-item list-group-item-${getColor(id[0])} d-flex justify-content-between`}>
+      <span
+        role="button"
         onClick={() => completeToDo(id)}>
-        {text}
-      </div>
-      <div 
-        className="todo-icon-container"
+        {completed ? <del>{text}</del> : text}
+      </span>
+      <span
+        role="button"
         onClick={() => deleteToDo(id)}>
-        <AiOutlineCloseCircle className="todo-icon" />
-      </div>
-    </div>
+        <AiOutlineCloseCircle className="figure-img" />
+      </span>
+    </li>
   )
 }
 

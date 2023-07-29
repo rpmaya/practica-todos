@@ -1,6 +1,6 @@
 import Logo from './components/Logo';
 import ListToDo from './components/ListToDo';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
